@@ -34,6 +34,11 @@ public class Car {
     @LastModifiedDate
     private LocalDateTime modifiedAt;
 
+    public Car() {
+        this.condition=Condition.NEW;
+        this.details= new Details();
+    }
+
     @NotNull
     @Enumerated(EnumType.STRING)
     private Condition condition;

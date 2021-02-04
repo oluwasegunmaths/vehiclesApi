@@ -42,7 +42,6 @@ public class MapsClient {
                             .build()
                     )
                     .retrieve().bodyToMono(Address.class).block();
-
             mapper.map(Objects.requireNonNull(address), location);
 
             return location;

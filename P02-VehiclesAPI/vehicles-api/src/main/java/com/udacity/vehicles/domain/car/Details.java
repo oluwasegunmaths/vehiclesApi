@@ -1,10 +1,16 @@
 package com.udacity.vehicles.domain.car;
 
 import com.udacity.vehicles.domain.manufacturer.Manufacturer;
+import com.udacity.vehicles.domain.manufacturer.ManufacturerRepository;
+import com.udacity.vehicles.domain.manufacturer.Manufacturers;
+import org.springframework.beans.factory.annotation.Autowired;
+
 import javax.persistence.Embeddable;
 import javax.persistence.ManyToOne;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import java.util.Random;
 
 /**
  * Declares the additional detail variables for each Car object,
@@ -26,6 +32,13 @@ public class Details {
     private Integer numberOfDoors;
 
     private String fuelType;
+
+    public Details() {
+        this.body= "fine body";
+        this.model="fine model";
+        this.manufacturer= Manufacturers.getRandomMan();
+    }
+
 
     private String engine;
 
